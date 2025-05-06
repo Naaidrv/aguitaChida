@@ -218,19 +218,13 @@
   
   .logo-image {
     height: 48px;
-    width: 48px;
+    width: 100%;
     margin-right: 0.5rem;
   }
   
   .logo-image img {
     height: 100%;
     width: auto;
-  }
-  
-  .logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--turquoise);
   }
   
   .navbar-links {
@@ -468,6 +462,7 @@
     padding: 4rem 0;
     text-align: center;
     color: var(--white);
+    background-color: var(--green);
   }
   
   .cta h2 {
@@ -634,6 +629,10 @@
     color: var(--white);
   }
   
+  .value-card {
+    color: var(--gray);
+  }
+
   /* Objectives Section */
   .objectives {
     padding: 4rem 0;
