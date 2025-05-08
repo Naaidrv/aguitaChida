@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
       yearElement.textContent = new Date().getFullYear()
     }
   
+    // Agregar clase 'active' al enlace actual
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll(".nav-link, .mobile-nav-link").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
     // Add fade-in animation to sections
     const sections = document.querySelectorAll("section")
   
@@ -40,5 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => {
       observer.observe(section)
     })
+
+    const logoLink = document.getElementById("logo-link");
+
+    if (logoLink) {
+      logoLink.addEventListener("click", function (e) {
+        const isHome = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+        if (isHome) {
+          e.preventDefault(); // Evita recargar
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }
+      });
+    }
   })
+
   
